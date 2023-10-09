@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - sobota-paŸdziernika-07-2023   
+--  File created - sobota-paï¿½dziernika-07-2023   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Package Body CON_EMP
@@ -16,7 +16,7 @@ BEGIN
     EXCEPTION
         WHEN OTHERS THEN
             NULL;
-    -- daj tu output tabela nie istnieje mo¿e (null ka¿e ignorowaæ b³ad)
+    -- daj tu output tabela nie istnieje moze (null kaze ignorowac blad)
    dbms_output.put_line('tabela nie istnieje');
  END;
  commit;
@@ -48,7 +48,7 @@ BEGIN
     
        EXCEPTION
         WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('Wyst pi  b  d podczas tworzenia tabeli: ' || SQLERRM);
+            DBMS_OUTPUT.PUT_LINE('Wystapil  blad podczas tworzenia tabeli: ' || SQLERRM);
      COMMIT;
 
   END; 
@@ -57,7 +57,7 @@ BEGIN
 
 
 
--- Bulk collect employee data into collection
+-- wstawianie danych do kolekcji
     SELECT *
     BULK COLLECT INTO  kolekcja_emplo
     FROM employees;
@@ -70,7 +70,7 @@ BEGIN
     BULK COLLECT INTO kolekcja_local
     from locations;
 
-    -- Insert data into the new table using FORALL
+    -- laczenie tabel
 
     FOR i IN kolekcja_emplo.FIRST..kolekcja_emplo.LAST 
     LOOP
