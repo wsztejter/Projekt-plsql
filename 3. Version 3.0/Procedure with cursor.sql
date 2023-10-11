@@ -1,9 +1,58 @@
 --------------------------------------------------------
---  File created - œroda-paŸdziernika-11-2023   
+--  File created - ï¿½roda-paï¿½dziernika-11-2023   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Procedure EMPLOC_CURSOR_FORALL
 --------------------------------------------------------
+CREATE TABLE new_employees_location (
+
+        EMPLOYEE_ID         NUMBER(6, 0),
+
+        FIRST_NAME          VARCHAR2(20),
+
+        LAST_NAME           VARCHAR2(25), 
+
+        EMAIL               VARCHAR2(25),
+
+        PHONE_NUMBER        VARCHAR2(20),
+
+        HIRE_DATE           DATE, 
+
+        JOB_ID              VARCHAR2(10),
+
+        SALARY              NUMBER(8, 2),
+
+        COMMISSION_PCT      NUMBER(2, 2),
+
+        EMPLO_MANAGER_ID    NUMBER(6, 0),
+
+        EMPLO_DEPARTMENT_ID NUMBER(4, 0),
+
+        DEP_DEPARTMENT_ID   NUMBER(4, 0),
+
+        DEPARTMENT_NAME     VARCHAR2(30),
+
+        MANAGER_ID          NUMBER(6, 0),
+
+        LOCATION_ID         NUMBER(4, 0),
+
+        LOC_LOCATION_ID     NUMBER(4, 0),
+
+        STREET_ADDRESS      VARCHAR2(40),
+
+        POSTAL_CODE         VARCHAR2(12),
+
+        CITY                VARCHAR2(30),
+
+        STATE_PROVINCE      VARCHAR2(25),
+
+        COUNTRY_ID          CHAR(2)
+
+    ); 
+
+/
+
+
 set define off;
 
   CREATE OR REPLACE EDITIONABLE PROCEDURE "HR"."EMPLOC_CURSOR_FORALL" as
@@ -21,7 +70,7 @@ set define off;
 
 BEGIN
 
-      -- usuwamy dane z tabeli (jeœli s¹)
+      -- usuwamy dane z tabeli (jeï¿½li sï¿½)
     EXECUTE IMMEDIATE 'DELETE FROM HR.NEW_EMPLOYEES_LOCATION';
      COMMIT;
 
@@ -31,7 +80,7 @@ BEGIN
       FETCH emploc_cursor BULK COLLECT INTO kolekcja_emploc;
       CLOSE emploc_cursor;
 
-    -- sprawdzenie czy dane siê przenios³y
+    -- sprawdzenie czy dane siï¿½ przeniosï¿½y
     --  for i in kolekcja_emploc.first..kolekcja_emploc.last loop
     --  dbms_output.put_line(kolekcja_emploc(i).employee_id);
     --    END LOOP;
